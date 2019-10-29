@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>list</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style >
+  input[type=text]{
+    text-align: center;
+    width: 30%;
+    height: 3em;
+    margin-left: 30%;
+    font-size: 25px;
+    }
+  ul{
+    margin-left: 40%;
+    font-size: 25px;
+    }
+  li:hover{
+    text-decoration: line-through;
+    }
+</style>
+     <script>
+         function myFunction(){
+         if(event.key==='Enter')
+         var list = document.getElementById("ol");
+         var ele = document.getElementById("ulist");
+         var li = document.createElement("li");
+         li.setAttribute('id',list.value);
+         li.appendChild(document.createTextNode(list.value));
+         ulist.appendChild(li);
+         list.value="";
+            $("#ulist").click (function(e){
+            $(e.target).remove();
+            });
+            }
+    </script>
+</head>
+   <body>
+      <input type="text" name="text"  id="ol" placeholder="What needs to be done?"  onkeydown="myFunction()" >
+      <ul id="ulist"></ul>
+  </body>
+</html>
